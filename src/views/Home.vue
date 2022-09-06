@@ -1,7 +1,7 @@
 <template>
   <Slider />
   <FeaturedCategories />
-  <RecommendedServices />
+  <!-- <RecommendedServices /> -->
   <NewestProvider />
 </template>
 
@@ -16,7 +16,6 @@ export default {
   components: {
     Slider,
     FeaturedCategories,
-    RecommendedServices,
     NewestProvider,
   },
 }

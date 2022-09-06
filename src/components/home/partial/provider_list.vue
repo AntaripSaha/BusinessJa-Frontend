@@ -1,7 +1,7 @@
 <template>
     <div class='flex flex-col rounded-lg shadow-xl overflow-hidden'>
       <div class='flex-shrink-0'>
-        <img :src='this.$filters.getFirstMediaUrl(eService)' alt='' class='h-80 w-full object-cover' />
+        <img :src='this.$filters.getFirstMediaUrl(providers)' alt='' class='h-80 w-full object-cover' />
       </div>
       <div class='flex-1 bg-white p-6 flex flex-col justify-between'>
         <div class='flex-1'>
