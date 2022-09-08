@@ -2,9 +2,9 @@
     <div class='relative pb-32 bg-accent-color-50'>
       <div class='flex justify-between items-center px-4 pt-6 pb-16 mx-auto max-w-7xl sm:px-6 lg:px-8'>
         <div class='flex-1 min-w-0'>
-          <h2 class='py-3 text-xl font-bold lg:text-4xl text-second-color-600'>Newest Members</h2>
+          <h2 class='py-3 text-xl font-bold lg:text-4xl text-second-color-600'>Featured Members</h2>
           <p class='text-sm sm:text-base text-second-color-400 sm:truncate'>
-            Newest Members Lists
+            Featured Members Lists
           </p>
         </div>
         <div class='flex mt-4 md:mt-0'>
@@ -20,7 +20,7 @@
     <section aria-labelledby='contact-heading'
              class='relative z-10 px-4 pb-32 mx-auto -mt-40 max-w-7xl sm:px-6 lg:px-8'>
       <div class='grid grid-cols-1 gap-y-20 lg:grid-cols-4 lg:gap-y-12 lg:gap-x-8'>
-        <provider v-for="providers in providersList" :key="providers.id" :provider='providers' />
+        <provider v-for="providers in featuredProvidersList" :key="providers.id" :provider='providers' />
       </div>
     </section>
   </template>
@@ -36,13 +36,13 @@
         provider,
     },
     mounted() {
-        this.getEProviderList()
+        this.getFeaturedProviderList()
     },
     computed: {
-        ...mapState(['providersList']),
+        ...mapState(['featuredProvidersList']),
     },
     methods: {
-        ...mapActions(['getEProviderList']),
+        ...mapActions(['getFeaturedProviderList']),
     },
     }
 

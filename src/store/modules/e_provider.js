@@ -6,6 +6,7 @@ export default {
         eProvider: {},
         eProviderReviews: [],
         providersList: [],
+        featuredProvidersList: [],
         eProviderGalleries: [],
         eProviderAwards: [],
         eProviderExperiences: [],
@@ -20,6 +21,9 @@ export default {
         },
         UPDATE_PROVIDER_LIST(state, providers){
             state.providersList = providers
+        },
+        UPDATE_FEATURED_PROVIDER_LIST(state, providers){
+            state.featuredProvidersList = providers
         },
 
         UPDATE_E_PROVIDER_GALLERIES(state, galleries) {
@@ -40,15 +44,27 @@ export default {
     },
     actions: {
         getEProviderList({ commit }) {
-            commit('UPDATE_E_PROVIDER', {})
+            commit('UPDATE_PROVIDER_LIST', {})
             let queryParameters = {
                 'only': 'eProvider;id;name;price;discount_price;price_unit;has_media;media;total_reviews;rate;description',
-                'limit': '6',
+                'limit': '8',
             }
             this.$axios.get(`e_providers`, { params: queryParameters }).then(response => {
                 const providers = response.data.data
                 console.log(response.data.data)
                 commit('UPDATE_PROVIDER_LIST', providers)
+            })
+        },
+        getFeaturedProviderList({ commit }) {
+            commit('UPDATE_FEATURED_PROVIDER_LIST', {})
+            let queryParameters = {
+                'only': 'eProvider;id;name;price;discount_price;price_unit;has_media;media;total_reviews;rate;description',
+                'limit': '8',
+            }
+            this.$axios.get(`featured_providers_list`, { params: queryParameters }).then(response => {
+                const providers = response.data.data
+                console.log(response.data.data)
+                commit('UPDATE_FEATURED_PROVIDER_LIST', providers)
             })
         },
         getEProvider({ commit }, id = '') {
