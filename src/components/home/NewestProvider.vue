@@ -8,7 +8,7 @@
           </p>
         </div>
         <div class='flex mt-4 md:mt-0'>
-          <router-link :to='{name:"Categories"}'
+          <router-link :to='{name:"Members"}'
                        class='inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-white rounded-md border border-transparent shadow-sm bg-main-color-600 hover:bg-main-color-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-color-500'
                        type='button'>
             {{ $t('View All') }}

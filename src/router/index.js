@@ -9,6 +9,7 @@ import EProvider from '../views/EProvider.vue'
 import Bookings from '../views/Bookings.vue'
 import Favorites from '../views/Favorites.vue'
 import Search from '../views/Search.vue'
+import Members from '../views/Search.vue'
 import CustomPage from '../views/CustomPage.vue'
 import { createRouter as createVueRouter, createWebHistory } from 'vue-router'
 
@@ -20,6 +21,7 @@ const routes = [
     { path: '/category/:id/:sort?/:price?/:review?', name: 'Category', component: Category },
     { path: '/favorites/:price?', name: 'Favorites', component: Favorites, meta: { requiresAuth: true } },
     { path: '/search/:keywords?', name: 'Search', component: Search },
+    { path: '/new_members', name: 'Members', component: Members },
     { path: '/e_service/:id', name: 'EService', component: EService },
     { path: '/e_service/:action/:id', name: 'BookEService', component: EService, meta: { requiresAuth: true } },
     { path: '/e_provider/:id', name: 'EProvider', component: EProvider },
