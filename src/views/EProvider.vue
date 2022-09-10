@@ -4,7 +4,7 @@
     <div class='grid grid-cols-1 gap-8 lg:col-span-2'>
       <Description :eProvider='eProvider' />
       <Galleries />
-      <FeaturedServices />
+      <!-- <FeaturedServices /> -->
       <Reviews />
     </div>
     <div class='grid grid-cols-1 gap-8'>
@@ -34,7 +34,6 @@ const { mapState, mapActions } = createNamespacedHelpers('eProvider')
 export default {
   name: 'EProvider',
   components: {
-    FeaturedServices,
     Experiences,
     Awards,
     Availability,

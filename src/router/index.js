@@ -9,7 +9,7 @@ import EProvider from '../views/EProvider.vue'
 import Bookings from '../views/Bookings.vue'
 import Favorites from '../views/Favorites.vue'
 import Search from '../views/Search.vue'
-import Members from '../views/Search.vue'
+import Members from '../views/Member.vue'
 import CustomPage from '../views/CustomPage.vue'
 import { createRouter as createVueRouter, createWebHistory } from 'vue-router'
 

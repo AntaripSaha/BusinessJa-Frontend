@@ -2,8 +2,8 @@
   <Slider />
   <FeaturedCategories />
   <!-- <RecommendedServices /> -->
-  <NewestProvider />
   <FeaturedProvider />
+  <NewestProvider />
 </template>
 
 <script>

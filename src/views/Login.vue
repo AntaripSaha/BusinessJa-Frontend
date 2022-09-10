@@ -26,7 +26,6 @@
           </div>
 
           <div class='flex items-center'>
-
             <input id='remember'
                    :value='user.remember'
                    class='block w-4 h-4 rounded border-gray-300 text-main-color-600 focus:ring-main-color-500'

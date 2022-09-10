@@ -16,8 +16,8 @@
         </div>
         <div class='flex items-end justify-between'>
           <div class='h-6 flex'>
-            <StarIcon v-for='i in Math.ceil(provider.rate)' :key='i' aria-hidden='true' class='w-5 h-5 text-yellow-400' />
-            <StarIcon v-for='i in Math.floor(5 - provider.rate)' :key='i' aria-hidden='true' class='w-5 h-5 text-gray-300' />
+            <!-- <StarIcon v-for='i in Math.ceil(provider.rate)' :key='i' aria-hidden='true' class='w-5 h-5 text-yellow-400' />
+            <StarIcon v-for='i in Math.floor(5 - provider.rate)' :key='i' aria-hidden='true' class='w-5 h-5 text-gray-300' /> -->
           </div>
           <div class='flex flex-col pt-1 items-end  sm:pt-3'>
             <router-link :to='{name:"EProvider", params:{ id:provider.id }}'
