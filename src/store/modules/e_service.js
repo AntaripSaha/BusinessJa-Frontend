@@ -185,14 +185,12 @@ export default {
             if (this.state.eService.page === 1)
                 commit('UPDATE_E_SERVICES_OF_CATEGORY', [])
             let queryParameters = {
-                'with': 'eProvider;eProvider.addresses;categories',
                 'search': `name:${keywords}`,
                 'searchFields': 'name:like',
-                'searchJoin': 'and',
                 'limit': '4',
                 'offset': ((this.state.eService.page - 1) * 4).toString(),
             }
-            this.$axios.get('e_services', { params: queryParameters }).then(response => {
+            this.$axios.get('e_providers', { params: queryParameters }).then(response => {
                 console.log(response.data.data)
                 if (response.status === 200 && response.data?.success) {
                     const eServices = response.data.data?.map(element => swipePrices(element))
@@ -200,11 +198,29 @@ export default {
                 }
             })
         },
+        // getSearchEServicesAction({ commit }, { keywords = '' }) {
+        //     if (this.state.eService.page === 1)
+        //         commit('UPDATE_E_SERVICES_OF_CATEGORY', [])
+        //     let queryParameters = {
+        //         'with': 'eProvider;eProvider.addresses;categories',
+        //         'search': `name:${keywords}`,
+        //         'searchFields': 'name:like',
+        //         'searchJoin': 'and',
+        //         'limit': '4',
+        //         'offset': ((this.state.eService.page - 1) * 4).toString(),
+        //     }
+        //     this.$axios.get('e_services', { params: queryParameters }).then(response => {
+        //         console.log(response.data.data)
+        //         if (response.status === 200 && response.data?.success) {
+        //             const eServices = response.data.data?.map(element => swipePrices(element))
+        //             commit('PUSH_E_SERVICES_OF_CATEGORY', eServices)
+        //         }
+        //     })
+        // },
         getSearchFeaturedServicesAction({ commit }, { keywords = '' }) {
             if (this.state.eService.page === 1)
                 commit('UPDATE_E_SERVICES_OF_CATEGORY', [])
             let queryParameters = {
-                'with': 'eProvider;eProvider.addresses;categories',
                 'search': `name:${keywords}`,
                 'searchFields': 'name:like',
                 'searchJoin': 'and',
