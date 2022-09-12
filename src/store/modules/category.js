@@ -56,7 +56,7 @@ export default {
             let queryParameters = {
                 'with': 'featuredEServices',
                 'parent': 'true',
-                'search': 'featured:1',
+                // 'search': 'featured:1',
                 'searchFields': 'featured:=',
                 'orderBy': 'order',
                 'sortedBy': 'asc',
