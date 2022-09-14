@@ -235,6 +235,23 @@ export default {
                 }
             })
         },
+        getSearchCategoriesServicesAction({ commit }, { keywords = '', catId }) {
+            console.log('keywords', keywords)
+            console.log('catId', catId)
+            if (this.state.eService.page === 1)
+                commit('UPDATE_E_SERVICES_OF_CATEGORY', [])
+            let queryParameters = {
+                'category_id':`${catId}`,
+                'offset': ((this.state.eService.page - 1) * 4).toString(),
+            }
+            this.$axios.get('cat_providers', { params: queryParameters }).then(response => {
+                console.log(response.data.data)
+                if (response.status === 200 && response.data?.success) {
+                    const eServices = response.data.data?.map(element => swipePrices(element))
+                    commit('PUSH_E_SERVICES_OF_CATEGORY', eServices)
+                }
+            })
+        },
 
         getEService({ commit, rootGetters }, id = '') {
             commit('UPDATE_E_SERVICE', {})

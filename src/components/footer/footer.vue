@@ -5,7 +5,7 @@
       <div class='xl:grid xl:grid-cols-3 xl:gap-8'>
         <div class='space-y-4 xl:col-span-1'>
           <router-link as='div' class='cursor-pointer' to='/'>
-            <img :alt='this.$settings["app_name"]' :src='this.$settings["app_logo"]'
+            <img :alt='this.$settings["app_name"] == 0 ? "" : this.$settings["app_name"]' :src='this.$settings["app_logo"]'
                  class='w-auto h-12' />
           </router-link>
           <p class='text-base text-gray-500'>
