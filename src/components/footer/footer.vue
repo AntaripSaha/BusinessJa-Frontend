@@ -54,7 +54,7 @@
       </div>
       <div class='pt-8 mt-12 border-t border-gray-200'>
         <p class='text-base text-gray-400 xl:text-center'>
-          {{ $t('2022 SmarterVision - OnDemand Home Services') }}
+          {{ $t('© 2022 Easital Technologies Ltd. All rights reserved.') }}
         </p>
       </div>
     </div>
