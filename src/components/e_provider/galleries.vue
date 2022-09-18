@@ -11,10 +11,10 @@
             class='group block w-full aspect-w-10 aspect-h-8 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-main-color-500 overflow-hidden'>
             <img :src='this.$filters.getFirstMediaThumb(image)' alt='' class='object-cover pointer-events-none group-hover:opacity-75' />
             <button class='absolute inset-0 focus:outline-none' type='button'>
-              <span class='sr-only'>{{ $t('View details for') }} {{ image.description }}</span>
+              <span class='sr-only'>{{ $t('View details for') }} {{  this.$filters.transString(image.description) }}</span>
             </button>
           </div>
-          <p class='mt-2 block text-sm font-medium text-second-color-600 truncate pointer-events-none'>{{ image.description }}</p>
+          <p class='mt-2 block text-sm font-medium text-second-color-600 truncate pointer-events-none'>{{  this.$filters.transString(image.description) }}</p>
         </li>
       </ul>
 
