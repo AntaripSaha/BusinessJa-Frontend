@@ -241,6 +241,10 @@ export default {
             if (this.state.eService.page === 1)
                 commit('UPDATE_E_SERVICES_OF_CATEGORY', [])
             let queryParameters = {
+                'search': `name:${keywords}`,
+                'searchFields': 'name:like',
+                'searchJoin': 'and',
+                'limit': '4',
                 'category_id':`${catId}`,
                 'offset': ((this.state.eService.page - 1) * 4).toString(),
             }

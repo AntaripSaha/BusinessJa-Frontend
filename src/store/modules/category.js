@@ -47,7 +47,17 @@ export default {
             let queryParameters = {
                 'filter': 'id;name',
             }
-            this.$axios.get(`categories/${categoryId}`, { params: queryParameters }).then(response => {
+            this.$axios.get(`categorie/${categoryId}`, { params: queryParameters }).then(response => {
+                commit('UPDATE_CATEGORY', response.data.data)
+            })
+        },
+        getCategoryName({ commit }, {catId} ){
+            commit('UPDATE_CATEGORY', {})
+            let queryParameters = {
+                'filter': 'id;name',
+                'category_id':`${catId}`,
+            }
+            this.$axios.get('category_name',{ params: queryParameters }).then(response => {
                 commit('UPDATE_CATEGORY', response.data.data)
             })
         },
