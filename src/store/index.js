@@ -7,6 +7,7 @@ import eProvider from '../store/modules/e_provider'
 import booking from '../store/modules/booking'
 import snackbar from './modules/snackbar'
 import slider from './modules/slider'
+import sliderTwo from './modules/slider_two'
 import user from './modules/user'
 import notification from './modules/notification'
 import customPage from './modules/custom_page'
@@ -20,6 +21,7 @@ const store = createStore({
         booking,
         snackbar,
         slider,
+        sliderTwo,
         eService,
         eProvider,
         user,
