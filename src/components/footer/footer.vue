@@ -49,14 +49,14 @@
                 </router-link>
               </li>
               <div style="display:flex !important;" >
-                <a href="https://facebook.com" target="_blank">
-                 <img src="images/facebook.png"  class='mx-auto h-10 w-auto'>
+                <a href='https://facebook.com' target="_blank">
+                 <img :src="'images/facebook.png'"  class='mx-auto h-10 w-auto'>
                 </a>
-                <a href="https://twitter.com" target="_blank">
-                 <img src="images/twitter.png"  class='ml-2 mx-auto h-10 w-auto'>
+                <a href='https://twitter.com' target="_blank">
+                 <img :src="'images/twitter.png'"  class='ml-2 mx-auto h-10 w-auto'>
                 </a>
-                <a href="https://youtube.com" target="_blank">
-                 <img src="images/youtube.png"  class='ml-2 mx-auto h-10 w-auto'>
+                <a href='https://youtube.com' target="_blank">
+                 <img :src="'images/youtube.png'"  class='ml-2 mx-auto h-10 w-auto'>
                 </a>
               </div>
             </ul>

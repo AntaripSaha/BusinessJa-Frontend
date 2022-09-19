@@ -31,6 +31,12 @@
   </div>
 </template>
 <style>
+  .carousel__prev{
+    display: none !important;
+  }
+  .carousel__next{
+    display: none !important;
+  }
 @media (min-width: 640px) {
   .carousel .carousel__viewport {
     border-radius: 1rem;
