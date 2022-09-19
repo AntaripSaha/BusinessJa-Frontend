@@ -19,6 +19,18 @@
           <DeviceMobileIcon class='w-6 h-6' />
           <span>{{ eProvider?.mobile_number }}</span>
         </button>
+        <a :href="eProvider.facebook" target="_blank" class='inline-flex items-center px-4 py-2 space-x-2 text-sm font-medium text-gray-600 bg-white rounded-md border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-color-500'>
+          <img src="images/facebook.png" class='h-7 w-auto'>
+          <span>{{ eProvider.name.en }}</span>
+        </a>
+        <a :href="eProvider.twitter" target="_blank" class='inline-flex items-center px-4 py-2 space-x-2 text-sm font-medium text-gray-600 bg-white rounded-md border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-color-500'>
+          <img src="images/twitter.png" class='h-7 w-auto'>
+          <span>{{ eProvider.name.en }}</span>
+        </a>
+        <a :href="eProvider.youtube" target="_blank" class='inline-flex items-center px-4 py-2 space-x-2 text-sm font-medium text-gray-600 bg-white rounded-md border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-color-500'>
+          <img src="images/youtube.png" class='h-7 w-auto'>
+          <span>{{ eProvider.name.en }}</span>
+        </a>
       </div>
     </div>
   </section>

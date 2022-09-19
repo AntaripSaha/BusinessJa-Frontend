@@ -48,10 +48,22 @@
                   {{ this.$filters.transString(page.title) }}
                 </router-link>
               </li>
+              <div style="display:flex !important;" >
+                <a href="https://facebook.com" target="_blank">
+                 <img src="images/facebook.png"  class='mx-auto h-10 w-auto'>
+                </a>
+                <a href="https://twitter.com" target="_blank">
+                 <img src="images/twitter.png"  class='ml-2 mx-auto h-10 w-auto'>
+                </a>
+                <a href="https://youtube.com" target="_blank">
+                 <img src="images/youtube.png"  class='ml-2 mx-auto h-10 w-auto'>
+                </a>
+              </div>
             </ul>
           </div>
         </div>
       </div>
+      
       <div class='pt-8 mt-12 border-t border-gray-200'>
         <p class='text-base text-gray-400 xl:text-center'>
           {{ $t('© 2022 Easital Technologies Ltd. All rights reserved.') }}

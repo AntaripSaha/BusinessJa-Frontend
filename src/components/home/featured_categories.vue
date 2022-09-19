@@ -1,10 +1,10 @@
 <template>
 
-  <div class='py-10 bg-accent-color-50'>
+  <div class='pt-16 bg-accent-color-50'>
 
-    <div class='flex justify-between items-center px-4 py-10 mx-auto max-w-7xl sm:px-6 lg:px-8'>
+    <div class='flex justify-between items-center px-4 py-5 mx-auto max-w-7xl sm:px-6 lg:px-8'>
       <div class='flex-1 min-w-0'>
-        <h2 class='py-3 text-xl font-bold lg:text-4xl text-second-color-600'>
+        <h2 class='pb-4 text-xl font-bold lg:text-4xl text-second-color-600'>
           {{ $t('Categories') }}
         </h2>
         <p class='text-sm sm:text-base text-second-color-400 sm:truncate'>
