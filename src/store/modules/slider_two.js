@@ -3,7 +3,7 @@ import { getCurrentInstance as instance } from 'vue'
 export default {
     namespaced: true,
     state: () => ({
-        slides: [],
+        slider_two: [],
     }),
 
     getters: {
@@ -11,8 +11,8 @@ export default {
     },
 
     mutations: {
-        UPDATE_SLIDES(state, slides) {
-            state.slides = slides
+        UPDATE_SLIDES(state, slider_two) {
+            state.slider_two = slider_two
         },
     },
 

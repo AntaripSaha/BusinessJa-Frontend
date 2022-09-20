@@ -1,5 +1,5 @@
 <template>
-    <div class='relative pb-32 bg-accent-color-50'>
+    <div class='relative pb-32 bg-accent-color-50 height-mobile'>
       <div class='flex justify-between items-center px-4 pt-6 pb-16 mx-auto max-w-7xl sm:px-6 lg:px-8'>
         <div class='flex-1 min-w-0'>
           <h2 class='py-3 text-xl font-bold lg:text-4xl text-second-color-600'>Newest Members</h2>
@@ -24,7 +24,13 @@
       </div>
     </section>
   </template>
-  
+  <style>
+    @media screen and (max-width: 600px) {
+        .height-mobile {
+          margin-top: 22%;
+        }
+      }
+  </style>
   <script>
     import provider from './partial/provider_list.vue'
     import { createNamespacedHelpers } from 'vuex'

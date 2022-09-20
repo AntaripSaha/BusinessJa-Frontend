@@ -2,7 +2,7 @@
   <Popover v-slot='{ open }' class='relative'>
     <PopoverButton
       :class="[open ? 'text-second-color-900' : 'text-second-color-500', 'group inline-flex items-center text-sm focus:outline-none text-second-color-500 hover:text-second-color-900']">
-      <span>{{ getAddress.description || $t('Select Your Address') }}</span>
+      <span>{{ getAddress.description || $t('Set Address') }}</span>
       <LocationMarkerIcon :class="[open ? 'text-second-color-900' : 'text-second-color-500', 'ml-2 h-6 w-6 group-hover:text-second-color-900']"
                           aria-hidden='true' />
     </PopoverButton>
