@@ -20,13 +20,17 @@
       </div>
     </div>
 
-    <div class='grid overflow-hidden grid-cols-2 gap-4 px-4 mx-auto max-w-7xl sm:py-6 sm:px-6 lg:px-8 sm:grid-cols-3 lg:grid-cols-6 sm:gap-8'>
+    <div class='grid overflow-hidden grid-cols-2 gap-4 px-4 mx-auto max-w-7xl custom-height sm:py-4  sm:px-4 lg:px-5 sm:grid-cols-3 lg:grid-cols-6 sm:gap-4'>
       <CategoryItem v-for='category in featuredCategories' :key='category.id' :category='category' />
     </div>
   </div>
 
 </template>
-
+<style>
+  .custom-height{
+    height: 13rem !important;
+  }
+</style>
 <script>
 
 import { createNamespacedHelpers } from 'vuex'

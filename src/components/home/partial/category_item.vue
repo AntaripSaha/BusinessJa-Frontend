@@ -19,9 +19,14 @@
 </template>
 <style>
   .name{
-    margin-top: -19%;
+    margin-top: -16%;
+    text-align: center;
   }
   .img-custom{
+    height: 114px;
+    width: auto;
+    margin-left: 23%;
+    padding-top: 4%;
     border-top-left-radius: 5%;
     border-top-right-radius: 5%;
   }
