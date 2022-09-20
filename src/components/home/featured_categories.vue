@@ -28,7 +28,8 @@
 </template>
 <style>
   .custom-height{
-    height: 13rem !important;
+    height: 7rem;
+    /* width: 70rem; */
   }
 </style>
 <script>

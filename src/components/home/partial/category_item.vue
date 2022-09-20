@@ -19,16 +19,16 @@
 </template>
 <style>
   .name{
-    margin-top: -16%;
+    margin-top: -20%;
+    font-size: 12px;
     text-align: center;
   }
   .img-custom{
-    height: 114px;
+    height: 50px;
     width: auto;
-    margin-left: 23%;
+    margin-left: 39%;
     padding-top: 4%;
-    border-top-left-radius: 5%;
-    border-top-right-radius: 5%;
+    padding-bottom: 4%;
   }
 </style>
 <script>
