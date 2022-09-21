@@ -8,7 +8,8 @@
           {{ $t('Categories') }}
         </h2>
         <p class='text-sm sm:text-base text-second-color-400 sm:truncate'>
-          {{ $t('Featured Categories Subtitle') }}
+          <!-- {{ $t('Featured Categories Subtitle') }} -->
+          All Categories
         </p>
       </div>
       <div class='flex mt-4 md:mt-0'>
@@ -30,6 +31,10 @@
       }"
       :breakpoints="{
         '240': {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        '320': {
           slidesPerView: 2,
           spaceBetween: 10,
         },
@@ -62,10 +67,6 @@
 
 </template>
 <style>
-  .custom-height{
-    height: 5rem;
-    width: 75rem;
-  }
   .name{
     margin-top: -20%;
     font-size: 10px;
@@ -80,7 +81,19 @@
   }
   @media screen and (min-width: 1500px){
     .cus-margin{
-      margin-top: 5% !important;
+      margin-top: 8% !important;
+    }
+  }
+  @media only screen and (min-width: 290px) and (max-width: 800px){
+    .custom-height{
+      height: 5rem;
+      width: 23rem;
+    }
+  }
+  @media only screen and (min-width: 799px){
+    .custom-height{
+      height: 5rem;
+      width: 76rem;
     }
   }
 </style>

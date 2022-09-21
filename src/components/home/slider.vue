@@ -24,9 +24,9 @@
               <p :style="'color:'+slide.text_color" class='text-sm font-bold sm:text-xl lg:text-3xl'>
                 {{ this.$filters.transString(slide.text) }}
               </p>
-              <router-link v-if='slide.e_service_id !== null' :to='{name:"EService",params:{id:slide.e_service_id || 0}}' :style="'background-color:'+slide.button_color" class="block px-3 py-3 w-32 rounded-full text-sm text-white text-center my-1 mx-auto">{{ this.$filters.transString(slide.button) }}</router-link>
-              <router-link v-else-if='slide.e_provider_id !== null' :to='{name:"EProvider",params:{id:slide.e_provider_id || 0}}' :style="'background-color:'+slide.button_color" class="block px-3 py-3 w-32 rounded-full text-sm text-white text-center my-1 mx-auto">{{ this.$filters.transString(slide.button) }}</router-link>
-              <a v-else href='#' :style="'background-color:'+slide.button_color" class="block px-3 py-3 w-32 rounded-full text-sm text-white text-center my-1 mx-auto">{{ this.$filters.transString(slide.button) }}</a>
+              <router-link v-if='slide.e_service_id !== null' :to='{name:"EService",params:{id:slide.e_service_id || 0}}' :style="'background-color:'+slide.button_color" class=" custom-button block px-3 py-3 w-32 rounded-full text-sm text-white text-center my-1 mx-auto">{{ this.$filters.transString(slide.button) }}</router-link>
+              <router-link v-else-if='slide.e_provider_id !== null' :to='{name:"EProvider",params:{id:slide.e_provider_id || 0}}' :style="'background-color:'+slide.button_color" class=" custom-button block px-3 py-3 w-32 rounded-full text-sm text-white text-center my-1 mx-auto">{{ this.$filters.transString(slide.button) }}</router-link>
+              <a v-else href='#' :style="'background-color:'+slide.button_color" class=" custom-button block px-3 py-3 w-32 rounded-full text-sm text-white text-center my-1 mx-auto ">{{ this.$filters.transString(slide.button) }}</a>
             </div>
           </div>
         </swiper-slide>
@@ -43,10 +43,13 @@
   .cus-background{
     background-size: cover !important;
   }
+  .custom-button{
+    margin-left: 0% !important;
+  }
   @media screen and (min-width: 1500px){
     .cus-height{
       background-size: cover !important;
-      height: 550px !important;
+      height: 650px !important;
     }
   }
 @media (min-width: 640px) {

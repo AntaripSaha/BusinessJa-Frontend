@@ -17,6 +17,18 @@
     bottom: 0;
     z-index: 1;
 }
+@media screen and (min-width: 320px) and (max-width: 634px){
+  .custo-search{
+    position: absolute;
+    bottom: -30%;
+    z-index: 1;
+}
+}
+@media screen and (min-width: 1500px){
+    .custo-search{
+      margin-bottom: -10% !important;
+    }
+  }
 </style>
 <script>
 import { mapState, mapActions } from 'vuex'
