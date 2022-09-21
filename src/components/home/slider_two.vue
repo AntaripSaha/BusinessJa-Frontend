@@ -43,12 +43,6 @@
   </div>
 </template>
 <style>
-  .carousel__prev{
-    display: none !important;
-  }
-  .carousel__next{
-    display: none !important;
-  }
 @media (min-width: 640px) {
   .carousel .carousel__viewport {
     border-radius: 1rem;
@@ -59,9 +53,9 @@
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
+import { Autoplay, Pagination, Navigation } from "swiper";
 import { createNamespacedHelpers } from 'vuex'
 import Loader from '../partial/loader.vue'
-import { Autoplay, Pagination, Navigation } from "swiper";
 const { mapState, mapActions } = createNamespacedHelpers('sliderTwo')
 
 export default {

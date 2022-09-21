@@ -1,21 +1,39 @@
 <template>
-  <router-link :to="{ name: 'Category', params: { id: category.id }}" class='relative group bg-white rounded-lg hover:shadow-lg'>
-    <div>
-        <!-- <span :style="'background-color:'+category.color" class='rounded-lg inline-flex p-2 ring-4 ring-white'>
-          <img :alt='$filters.transString(category.name)' :src='$filters.getFirstMediaUrl(category)' aria-hidden='true' class='h-12 w-12 opacity-70'>
-        </span> -->
-        
-        <img :alt='$filters.transString(category.name)' :src='$filters.getFirstMediaUrl(category)' aria-hidden='true' class='object-contain img-custom'>
-    </div>
-    <div class='mt-8'>
-      <h3 class='text-md text-second-color-500 font-bold p-3 name'>
-        {{ $filters.transString(category.name) }}
-      </h3>
-      <!-- <p class='mt-2 text-sm text-second-color-400'>
-        {{ $filters.stripHtml($filters.transString(category.description)) }}
-      </p> -->
-    </div>
-  </router-link>
+      <swiper
+      :slides-per-view="2"
+      :loop="true"
+      :centeredSlides="false"
+      :autoplay="{
+        delay: 2500,
+      }"
+      :breakpoints="{
+        '240': {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        '768': {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+        '1024': {
+          slidesPerView: 2,
+          spaceBetween: 10,
+        },
+      }"
+      :modules="modules"
+      >
+        <swiper-slide  >
+          <router-link :to="{ name: 'Category', params: { id: category.id }}" class='relative group bg-white rounded-lg hover:shadow-lg'>
+            <img :alt='$filters.transString(category.name)' :src='$filters.getFirstMediaUrl(category)' aria-hidden='true' class='object-contain img-custom'>
+            <div class='mt-8'>
+              <h3 class='text-md text-second-color-500 font-bold p-3 name'>
+                {{ $filters.transString(category.name) }}
+              </h3>
+            </div>
+          </router-link>
+        </swiper-slide>
+      </swiper>
+  
 </template>
 <style>
   .name{
@@ -32,8 +50,21 @@
   }
 </style>
 <script>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import { Autoplay, Pagination, Navigation } from "swiper";
 export default {
   name: 'CategoryItem',
   props: ['category'],
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+      return {
+        modules: [Autoplay, Pagination, Navigation],
+      };
+    },
+
 }
 </script>

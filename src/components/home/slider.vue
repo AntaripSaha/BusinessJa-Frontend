@@ -1,10 +1,9 @@
 <template>
   <div class='relative'>
-
-    <div class='absolute inset-x-0 bottom-0 h-1/2 bg-accent-color-50' />
+    <div class='inset-x-0 bottom-0 h-1/2 bg-accent-color-50' />
     <SliderBackground />
     <Loader v-if='slides.length === 0' height='h-48 sm:h-96' />
-    <div v-else class='mx-auto max-w-7xl h-48 sm:h-96 sm:px-6 lg:px-8' >
+    <div v-else class='mx-auto h-48 sm:h-96 sm:px-6 lg:px-8' >
       <swiper
       :slides-per-view="1"
       :loop="true"
@@ -14,12 +13,11 @@
       }"
       :modules="modules"
       >
-        <swiper-slide v-for='slide in slides' :key='slide' class='relative w-full shadow-xl sm:overflow-hidden'>
-          <div class='absolute inset-0'>
+        <swiper-slide v-for='slide in slides' :key='slide' class='cus-background cus-height w-full shadow-xl sm:overflow-hidden'>
+          <div class='absolute inset-0' >
             <img :src='this.$filters.getFirstMediaUrl(slide)'
                  alt='People working on laptops'
-                 class='object-fit w-full h-full rounded-lg' />
-            <div class='absolute inset-0' />
+                 class='object-cover relative w-full h-full rounded-lg' />
           </div>
           <div class='flex relative items-center px-6 w-full h-48 sm:px-10 sm:h-96'>
             <div class='w-1/3'>
@@ -36,11 +34,21 @@
           <navigation v-if='slides.length > 0' class='hidden sm:flex' />
         </template>
       </swiper>
+      <SearchBar />
     </div>
-    <SearchBar />
   </div>
+  
 </template>
 <style>
+  .cus-background{
+    background-size: cover !important;
+  }
+  @media screen and (min-width: 1500px){
+    .cus-height{
+      background-size: cover !important;
+      height: 550px !important;
+    }
+  }
 @media (min-width: 640px) {
   .carousel .carousel__viewport {
     border-radius: 1rem;

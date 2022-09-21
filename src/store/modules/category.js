@@ -70,7 +70,7 @@ export default {
                 'searchFields': 'featured:=',
                 'orderBy': 'order',
                 'sortedBy': 'asc',
-                'limit': '6',
+                // 'limit': '7',
             }
             this.$axios.get('categories', { params: queryParameters }).then(response => {
                 console.log(response.data)
