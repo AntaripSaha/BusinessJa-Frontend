@@ -29,6 +29,16 @@
       margin-bottom: -10% !important;
     }
   }
+@media screen and (min-width: 1700px){
+    .custo-search{
+      margin-bottom: -10% !important;
+    }
+  }
+@media screen and (min-width: 2000px){
+    .custo-search{
+      margin-bottom: -7% !important;
+    }
+  }
 </style>
 <script>
 import { mapState, mapActions } from 'vuex'

@@ -21,9 +21,9 @@
       </div>
     </div>
       <!-- <CategoryItem  /> -->
-    <div class='mx-auto max-w-7xl custom-height relative' >
+    <div class='mx-auto custom-height max-w-7xl relative' >
       <swiper
-      :slides-per-view="6"
+      :slides-per-view="8"
       :loop="true"
       :centeredSlides="false"
       :autoplay="{
@@ -31,55 +31,66 @@
       }"
       :breakpoints="{
         '240': {
-          slidesPerView: 2,
-          spaceBetween: 10,
+          slidesPerView: 2.5,
+          spaceBetween: 0,
         },
         '320': {
-          slidesPerView: 2,
-          spaceBetween: 10,
+          slidesPerView: 2.5,
+          spaceBetween: 0,
         },
         '768': {
           slidesPerView: 4,
-          spaceBetween: 10,
+          spaceBetween: 0,
+        },
+        '900': {
+          slidesPerView: 5,
+          spaceBetween: 0,
         },
         '1024': {
-          slidesPerView: 6,
-          spaceBetween: 10,
+          slidesPerView: 8,
+          spaceBetween: 0,
         },
       }"
       :modules="modules"
       >
-        <swiper-slide v-for='category in featuredCategories' :key='category.id' :category='category' class='group bg-white rounded-lg hover:shadow-lg'>
+        <swiper-slide v-for='category in featuredCategories' :key='category.id' :category='category'>
           <router-link :to="{ name: 'Category', params: { id: category.id }}" >
-            <img :alt='$filters.transString(category.name)' :src='$filters.getFirstMediaUrl(category)' aria-hidden='true' class='object-contain img-custom'>
-            <div class='mt-8'>
-              <h3 class='text-md text-second-color-500 font-bold p-3 name'>
-                {{ $filters.transString(category.name) }}
-              </h3>
+            <div class="bg-white rounded-lg hover:shadow-lg" style="height:115px; width: 140px;">
+              <img :alt='$filters.transString(category.name)' :src='$filters.getFirstMediaUrl(category)' aria-hidden='true' class='  img-custom'>
+              <div class='mt-8'>
+                <h3 class=' text-second-color-500 font-bold p-0 name'>
+                  {{ $filters.transString(category.name) }}
+                </h3>
+              </div>
             </div>
           </router-link>
         </swiper-slide>
       </swiper>
-
     </div>
-      
   </div>
-
 </template>
 <style>
   .name{
-    margin-top: -20%;
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
   }
   .img-custom{
-    height: 41px;
+    height: 65px;
     width: auto;
-    margin-left: 40%;
+    margin-left: 30%;
     padding-top: 3%;
-    padding-bottom: 0%;
   }
-  @media screen and (min-width: 1500px){
+  @media screen and (min-width: 1500px) and (max-width: 1699px){
+    .cus-margin{
+      margin-top: 10% !important;
+    }
+  }
+  @media screen and (min-width: 1700px) and (max-width: 2000px){
+    .cus-margin{
+      margin-top: 11% !important;
+    }
+  }
+  @media screen and (min-width: 2000px){
     .cus-margin{
       margin-top: 8% !important;
     }
@@ -92,8 +103,8 @@
   }
   @media only screen and (min-width: 799px){
     .custom-height{
-      height: 5rem;
-      width: 76rem;
+      height: 6rem;
+      width: 76rem !important;
     }
   }
 </style>

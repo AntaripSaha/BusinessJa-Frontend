@@ -27,7 +27,7 @@
   <style>
     @media screen and (max-width: 600px) {
         .height-mobile {
-          margin-top: 22%;
+          margin-top: 10%;
         }
       }
   </style>

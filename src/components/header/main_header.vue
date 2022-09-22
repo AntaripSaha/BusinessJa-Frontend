@@ -13,7 +13,7 @@
           </div>
           <router-link as='div' class='flex flex-shrink-0 items-center cursor-pointer' to='/'>
             <img :alt='this.$settings["app_name"] == 0 ? "" : this.$settings["app_name"]' :src='this.$settings["app_logo"]'
-                 class='block w-auto h-8 lg:hidden' />
+                 class='block w-auto h-6 lg:hidden' />
             <img :alt='this.$settings["app_name"] == 0 ? "" : this.$settings["app_name"]'
                  :src='this.$settings["app_logo"]' class='hidden w-auto h-8 lg:block' />
             <span class='mx-3 font-bold text-second-color-600'>{{ this.$settings["app_name"] == 0 ? "" : this.$settings["app_name"]  }}</span>

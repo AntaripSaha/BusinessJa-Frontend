@@ -46,12 +46,13 @@
   .custom-button{
     margin-left: 0% !important;
   }
-  @media screen and (min-width: 1500px){
+  @media screen and (min-width: 1500px) and (max-width: 3500px){
     .cus-height{
       background-size: cover !important;
-      height: 650px !important;
+      height: 590px !important;
     }
   }
+ 
 @media (min-width: 640px) {
   .carousel .carousel__viewport {
     border-radius: 1rem;

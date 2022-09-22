@@ -23,18 +23,12 @@
         <swiper-slide v-for='category in slider_two' :key='category.id' :category='category' class='group bg-white rounded-lg hover:shadow-lg'>
           <router-link :to="{ name: 'Home'}" >
             <img :alt='$filters.transString(category.name)' :src='$filters.getFirstMediaUrl(category)' aria-hidden='true' class='rounded-lg h-72'>
-            <!-- <div class='mt-8'>
-              <h3 class='text-md text-second-color-500 font-bold p-3 name'>
-                {{ $filters.transString(category.name) }}
-              </h3>
-            </div> -->
           </router-link>
         </swiper-slide>
       </swiper>
 
     </div>
 </template>
-
 <script>
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
