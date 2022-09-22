@@ -17,7 +17,7 @@ export default {
             state.eProvider = eProvider
         },
         UPDATE_E_PROVIDER_REVIEWS(state, reviews) {
-            state.eProviderReviews.push(...reviews)
+            state.eProviderReviews = reviews
         },
         UPDATE_PROVIDER_LIST(state, providers){
             state.providersList = providers
@@ -27,7 +27,7 @@ export default {
         },
 
         UPDATE_E_PROVIDER_GALLERIES(state, galleries) {
-            state.eProviderGalleries.push(...galleries)
+            state.eProviderGalleries = galleries
         },
 
         UPDATE_E_PROVIDER_AWARDS(state, awards) {

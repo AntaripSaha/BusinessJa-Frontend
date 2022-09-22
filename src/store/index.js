@@ -30,5 +30,4 @@ const store = createStore({
         upload,
     },
 })
-
 export default store

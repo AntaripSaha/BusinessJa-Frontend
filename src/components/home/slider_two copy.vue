@@ -1,7 +1,6 @@
 <template>
-    <div class='mx-auto max-w-7xl lg:px-8' >
+  <div class='mx-auto max-w-7xl lg:px-8'>
       <swiper
-      :slides-per-view="2"
       :loop="true"
       :centeredSlides="false"
       :autoplay="{
@@ -11,28 +10,20 @@
         '240': {
           slidesPerView: 1,
           spaceBetween: 10,
-        }, 
-        '1024': {
+        },
+        '1500': {
           slidesPerView: 2,
           spaceBetween: 10,
-        }, 
+        },
         
       }"
       :modules="modules"
       >
-        <swiper-slide v-for='category in slider_two' :key='category.id' :category='category' class='group bg-white rounded-lg hover:shadow-lg'>
-          <router-link :to="{ name: 'Home'}" >
-            <img :alt='$filters.transString(category.name)' :src='$filters.getFirstMediaUrl(category)' aria-hidden='true' class='rounded-lg h-72'>
-            <!-- <div class='mt-8'>
-              <h3 class='text-md text-second-color-500 font-bold p-3 name'>
-                {{ $filters.transString(category.name) }}
-              </h3>
-            </div> -->
-          </router-link>
+        <swiper-slide v-for='slide in slider_two' :key='slide'>
+            <img :src='this.$filters.getFirstMediaUrl(slide)' class='rounded-lg h-72' />
         </swiper-slide>
       </swiper>
-
-    </div>
+   </div>
 </template>
 
 <script>
@@ -46,7 +37,7 @@ const { mapState, mapActions } = createNamespacedHelpers('sliderTwo')
 export default {
   name: 'SliderTwo',
   components: {
-    Swiper,
+     Swiper,
     SwiperSlide,
   },
   setup() {
