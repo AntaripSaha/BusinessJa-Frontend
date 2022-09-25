@@ -6,6 +6,7 @@
       <Galleries />
       <!-- <FeaturedServices /> -->
       <Reviews />
+      <Review />
     </div>
     <div class='grid grid-cols-1 gap-8'>
       <Availability :eProvider='eProvider' />
@@ -19,6 +20,7 @@
 <script>
 
 import Heading from '../components/e_provider/heading.vue'
+import Review from '../components/e_provider/review.vue'
 import Description from '../components/e_provider/description.vue'
 import Galleries from '../components/e_provider/galleries.vue'
 import Reviews from '../components/e_provider/reviews.vue'
@@ -34,6 +36,7 @@ const { mapState, mapActions } = createNamespacedHelpers('eProvider')
 export default {
   name: 'EProvider',
   components: {
+    Review,
     Experiences,
     Awards,
     Availability,

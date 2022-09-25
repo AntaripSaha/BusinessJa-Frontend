@@ -12,8 +12,6 @@ import filters from './plugins/filters'
 import { setupI18n } from './utils/i18n'
 import UUID from 'vue3-uuid'
 import tinycolor from 'tinycolor2'
-
-
 let app = createApp(App);
 
 (async () => {

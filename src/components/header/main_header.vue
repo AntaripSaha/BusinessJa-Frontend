@@ -45,11 +45,11 @@
             <Languages />
           </div>
           <MyNotifications v-if='this.isAuth' />
-          <a :href="'https://admin.yellowpageja.com/login'" 
+          <a :href="'Login'" 
             class='text-sm focus:outline-none text-second-color-500 hover:text-second-color-900'>
             {{ $t('Login') }}
             </a>
-          <a :href="'https://admin.yellowpageja.com/register'" 
+          <a :href="'Register'" 
             class='hidden px-4 py-2 text-sm text-white rounded-md border border-transparent shadow-sm md:inline-flex bg-main-color-600 hover:bg-main-color-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-color-500'>
             {{ $t('Register') }}
           </a>
@@ -131,11 +131,11 @@
             <div class='text-sm font-medium text-gray-500'>{{ this.getUser?.email }}</div>
           </div>
           <div v-if='!this.isAuth' class='flex items-center space-x-4'>
-            <a :href="'https://admin.yellowpageja.com/login'" 
+            <a :href="'Login'" 
             class='text-sm focus:outline-none text-second-color-500 hover:text-second-color-900'>
             {{ $t('Login') }}
             </a>
-            <a :href="'https://admin.yellowpageja.com/register'" 
+            <a :href="'Register'" 
               class='hidden px-4 py-2 text-sm text-white rounded-md border border-transparent shadow-sm md:inline-flex bg-main-color-600 hover:bg-main-color-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-color-500'>
               {{ $t('Register') }}
             </a>

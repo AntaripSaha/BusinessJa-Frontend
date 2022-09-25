@@ -84,7 +84,7 @@ export default {
                 'only': 'eProviderReviews.id;eProviderReviews.review;eProviderReviews.rate;eProviderReviews.created_at;eProviderReviews.user;',
             }
 
-            this.$axios.get(`e_providers/${eProviderId}`, { params: queryParameters }).then(response => {
+            this.$axios.get(`review_e_provider/${eProviderId}`, { params: queryParameters }).then(response => {
                 console.log(response.data.data?.e_provider_reviews)
                 commit('UPDATE_E_PROVIDER_REVIEWS', response.data.data?.e_provider_reviews || [])
             })
