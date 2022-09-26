@@ -21,6 +21,7 @@ export default {
 
     actions: {
         toggleSnackBarAction({ commit }, snackbar) {
+            console.log('snackbar ...', snackbar)
             commit('SET_SNACK', snackbar)
             setTimeout(() => {
                 commit('SET_SNACK', undefined)

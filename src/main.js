@@ -12,8 +12,9 @@ import filters from './plugins/filters'
 import { setupI18n } from './utils/i18n'
 import UUID from 'vue3-uuid'
 import tinycolor from 'tinycolor2'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 let app = createApp(App);
-
 (async () => {
     const config = await fetch('config/global.json').then((response) => response.json())
     const settings = await fetch(config['admin_url'] + config['api_path'] + 'settings').then((response) => response.json())
@@ -42,6 +43,8 @@ let app = createApp(App);
             libraries: ['places'],
         },
     })
+    
+    app.use(ElementPlus)
     app.use(createRouter(app)).mount('#app')
 })()
 

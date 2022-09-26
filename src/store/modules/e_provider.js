@@ -89,6 +89,18 @@ export default {
                 commit('UPDATE_E_PROVIDER_REVIEWS', response.data.data?.e_provider_reviews || [])
             })
         },
+        // getEProviderReviews({ commit }, eProviderId = '') {
+        //     commit('UPDATE_E_PROVIDER_REVIEWS', [])
+        //     let queryParameters = {
+        //         'with': 'eProviderReviews;eProviderReviews.user',
+        //         'only': 'eProviderReviews.id;eProviderReviews.review;eProviderReviews.rate;eProviderReviews.created_at;eProviderReviews.user;',
+        //     }
+
+        //     this.$axios.get(`review_e_provider/${eProviderId}`, { params: queryParameters }).then(response => {
+        //         console.log(response.data.data?.e_provider_reviews)
+        //         commit('UPDATE_E_PROVIDER_REVIEWS', response.data.data?.e_provider_reviews || [])
+        //     })
+        // },
 
         getEProviderGalleries({ commit }, eProviderId = '') {
             commit('UPDATE_E_PROVIDER_GALLERIES', [])

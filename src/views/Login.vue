@@ -77,6 +77,7 @@ export default {
       this.loginAction(event).then(result => {
         if (result.type === 'success') {
           console.log(this.$route.redirectedFrom)
+          this.$router.back()
           this.$router.replace(this.$route.redirectedFrom || { name: 'Home' })
         }
         this.toggleSnackBarAction(result)
