@@ -1,6 +1,15 @@
 <template>
   <CategoriesLoader v-if='statuses.length === 0' />
   <nav v-else aria-label='Sidebar' class='space-y-1'>
+     <a
+     class="[item.current ? 'bg-gray-100 font-semibold text-second-color-600' : 'text-gray-600 hover:bg-gray-50 hover:text-second-color-600', 'group flex items-center px-3 py-2 font-medium rounded-md cursor-pointer']"
+     >
+      <span class='truncate'>
+        All Given Reviews 
+      </span>
+    </a>
+  </nav>
+  <!-- <nav v-else aria-label='Sidebar' class='space-y-1'>
     <a v-for='item in statuses' :key='item.id' :aria-current="item.current ? 'page' : undefined"
        :class="[item.current ? 'bg-gray-100 font-semibold text-second-color-600' : 'text-gray-600 hover:bg-gray-50 hover:text-second-color-600', 'group flex items-center px-3 py-2 font-medium rounded-md cursor-pointer']"
        @click='getBookings(item)'>
@@ -8,7 +17,7 @@
         {{ this.$filters.transString(item.status) }}
       </span>
     </a>
-  </nav>
+  </nav> -->
 </template>
 
 <script>

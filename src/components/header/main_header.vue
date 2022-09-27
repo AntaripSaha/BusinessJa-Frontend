@@ -79,14 +79,14 @@
                   </MenuItem>
                   <MenuItem v-slot='{ active }'>
                     <router-link :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']" :to='{name:"Bookings"}'>
-                      {{ $t('My Bookings') }}
+                      {{ $t('My Reviews') }}
                     </router-link>
                   </MenuItem>
-                  <MenuItem v-slot='{ active }'>
+                  <!-- <MenuItem v-slot='{ active }'>
                     <router-link :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']" :to='{name:"Favorites"}'>
                       {{ $t('Favorites') }}
                     </router-link>
-                  </MenuItem>
+                  </MenuItem> -->
                   <MenuItem v-slot='{ active }'>
                     <div :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700 cursor-pointer']" @click='logout'>
                       {{ $t('Logout') }}
