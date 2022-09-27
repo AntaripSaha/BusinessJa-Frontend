@@ -10,12 +10,6 @@ export default {
             rate: 1,
             review: '',
         },
-        reviews: {
-            e_provider_name:'',
-            rate:'',
-            review:'',
-            media:'',
-        },
         bookingDetails: {},
         statuses: [],
         bookings: [],
@@ -47,9 +41,6 @@ export default {
 
         PUSH_BOOKINGS(state, bookings) {
             state.bookings.push(...bookings)
-        },
-        PUSH_REVIEWS(state, reviews) {
-            state.reviews = reviews
         },
         SELECT_STATUS(state, status) {
             state.statuses.forEach(element => {
@@ -116,42 +107,28 @@ export default {
 
         getBookingsAction({ state, commit, getters, rootGetters }) {
             if (!rootGetters['user/isAuth']) return { success: false, message: 'Not authorized' }
-            // const status = getters.getCurrentStatus
-            // if (state.page === 1) commit('UPDATE_BOOKINGS', [])
+            const status = getters.getCurrentStatus
+            if (state.page === 1) commit('UPDATE_BOOKINGS', [])
             let queryParameters = {
+                'with': 'bookingStatus;payment;payment.paymentStatus',
                 'api_token': rootGetters['user/getUser'].api_token,
-                'user_id': rootGetters['user/getUser'].id,
+                'search': `booking_status_id:${status.id}`,
+                'orderBy': 'created_at',
+                'sortedBy': 'desc',
+                'limit': '4',
+                'offset': ((state.page - 1) * 4).toString(),
             }
-            this.$axios.get('get_user_reviews', { params: queryParameters }).then(response => {
-                console.log("review data from state",response.data.data.items)
-                const reviews = response.data.data.items
-                commit('PUSH_REVIEWS', reviews)
+            this.$axios.get('bookings', { params: queryParameters }).then(response => {
+                console.log(response.data.data)
+                if (response.status === 200 && response.data?.success) {
+                    const bookings = response.data.data.map(function(element) {
+                        element.e_service = swipePrices(element.e_service)
+                        return element
+                    })
+                    commit('PUSH_BOOKINGS', bookings)
+                }
             })
         },
-        // getBookingsAction({ state, commit, getters, rootGetters }) {
-        //     if (!rootGetters['user/isAuth']) return { success: false, message: 'Not authorized' }
-        //     const status = getters.getCurrentStatus
-        //     if (state.page === 1) commit('UPDATE_BOOKINGS', [])
-        //     let queryParameters = {
-        //         'with': 'bookingStatus;payment;payment.paymentStatus',
-        //         'api_token': rootGetters['user/getUser'].api_token,
-        //         'search': `booking_status_id:${status.id}`,
-        //         'orderBy': 'created_at',
-        //         'sortedBy': 'desc',
-        //         'limit': '4',
-        //         'offset': ((state.page - 1) * 4).toString(),
-        //     }
-        //     this.$axios.get('bookings', { params: queryParameters }).then(response => {
-        //         console.log(response.data.data)
-        //         if (response.status === 200 && response.data?.success) {
-        //             const bookings = response.data.data.map(function(element) {
-        //                 element.e_service = swipePrices(element.e_service)
-        //                 return element
-        //             })
-        //             commit('PUSH_BOOKINGS', bookings)
-        //         }
-        //     })
-        // },
 
         async getBookingDetailsAction({ dispatch, state, commit, getters, rootGetters }, bookingId) {
             if (!rootGetters['user/isAuth']) return { type: 'error', title: 'Permission denied', message: 'Not authorized' }

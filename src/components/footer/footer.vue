@@ -9,7 +9,7 @@
                  class='w-auto h-12' />
           </router-link>
           <p class='text-base text-black-500'>
-            {{ $t('Home Service Company provides a platform that allows skilled and experienced professionals to connect with users looking for specific services.')
+            {{ $t('We provide a platform for businesses to list their product’s and services, our business directory is available to all and is free for users.')
             }}
           </p>
         </div>

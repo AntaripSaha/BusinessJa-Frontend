@@ -64,7 +64,7 @@
         this.posts.api_token = this.getUser.api_token,
         this.posts.user_id = this.getUser.id,
         this.posts.e_provider_id = this.$route.params.id,
-         response =  axios.post('http://192.168.88.181:8000/api/e_service_reviews', this.posts).then(response => {
+         response =  axios.post('https://admin.yellowpageja.com/api/e_service_reviews', this.posts).then(response => {
             console.log('response ', response )
             if(response.data.success === true){
                 this.$notify({
