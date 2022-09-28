@@ -78,7 +78,7 @@
                     </span>
                   </MenuItem>
                   <MenuItem v-slot='{ active }'>
-                    <router-link :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']" :to='{name:"Bookings"}'>
+                    <router-link :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']" :to='{name:"Reviews"}'>
                       {{ $t('My Reviews') }}
                     </router-link>
                   </MenuItem>
@@ -152,9 +152,9 @@
             {{ $t('Your Profile') }}
           </span>
           <router-link
-            :class="[($router.currentRoute.value.name === 'Bookings') ? 'bg-main-color-50 border-main-color-500 text-main-color-700': 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700','text-base font-medium sm:pl-5 sm:pr-6 block pl-3 pr-4 py-2 border-l-4']"
-            :to='{name:"Bookings"}'>
-            {{ $t('My Bookings') }}
+            :class="[($router.currentRoute.value.name === 'Reviews') ? 'bg-main-color-50 border-main-color-500 text-main-color-700': 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700','text-base font-medium sm:pl-5 sm:pr-6 block pl-3 pr-4 py-2 border-l-4']"
+            :to='{name:"Reviews"}'>
+            {{ $t('My Reviews') }}
           </router-link>
           <router-link
             :class="[($router.currentRoute.value.name === 'Favorites') ? 'bg-main-color-50 border-main-color-500 text-main-color-700': 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700','text-base font-medium sm:pl-5 sm:pr-6 block pl-3 pr-4 py-2 border-l-4']"
