@@ -16,9 +16,7 @@
     </div>
   </div>
 </template>
-
 <script>
-
 import Heading from '../components/e_provider/heading.vue'
 import Review from '../components/e_provider/review.vue'
 import Description from '../components/e_provider/description.vue'

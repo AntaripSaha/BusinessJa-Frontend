@@ -10,12 +10,7 @@ export default {
             rate: 1,
             review: '',
         },
-        reviews: {
-            e_provider_name:'',
-            rate:'',
-            review:'',
-            media:'',
-        },
+        reviews: [],
         bookingDetails: {},
         statuses: [],
         bookings: [],
