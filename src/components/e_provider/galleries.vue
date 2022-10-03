@@ -4,20 +4,11 @@
     <div v-else class='rounded-lg bg-white overflow-hidden shadow-lg p-8'>
       <h2 class='text-xl font-bold text-second-color-600 mb-4 '>{{ $t('Galleries') }}</h2>
       <ul class='grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8' role='list'>
-        <li v-for='image in eProviderGalleries' :key='image.id' class='relative'>
-          <div
-            class='group block w-full aspect-w-10 aspect-h-8 rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-main-color-500 overflow-hidden'>
-            <a  :href='image.media[0].url' target='_blank'>
-              <img :src='this.$filters.getFirstMediaThumb(image)' alt='' class='object-cover pointer-events-none group-hover:opacity-75' />
-            </a>
-            <!-- 
-              <button class='absolute inset-0 focus:outline-none' type='button'>
-                <span class='sr-only'>{{ $t('View details for') }} {{this.$filters.stripHtml(image.description)}}</span>
-              </button> 
-              -->
-          </div>
-          <p class='mt-2 block text-sm font-medium text-second-color-600 truncate pointer-events-none'>{{this.$filters.stripHtml(image.description)}}</p>
-        </li>
+        <photo-provider>
+            <photo-consumer v-for="image in eProviderGalleries" :intro="this.$filters.stripHtml(image.description)" :key="image.id" :src="image.media[0].url">
+              <img :src="image.media[0].url" class="w-full custom-img-height aspect-w aspect-h-8 rounded-lg object-cover">
+            </photo-consumer>
+        </photo-provider>
       </ul>
     </div>
   </section>
@@ -32,6 +23,7 @@ export default {
   name: 'Galleries',
   components: {
     Loader,
+
   },
   mounted() {
     this.getEProviderGalleries(this.$route.params.id)
@@ -44,3 +36,9 @@ export default {
   },
 }
 </script>
+<style>
+  .custom-img-height{
+    height: 130px;
+    width: auto;
+  }
+</style>

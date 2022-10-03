@@ -5,7 +5,9 @@
       <Description :eProvider='eProvider' />
       <Galleries />
       <!-- <FeaturedServices /> -->
+      <Maps />
       <Reviews />
+      
       <Review />
     </div>
     <div class='grid grid-cols-1 gap-8'>
@@ -22,6 +24,7 @@ import Review from '../components/e_provider/review.vue'
 import Description from '../components/e_provider/description.vue'
 import Galleries from '../components/e_provider/galleries.vue'
 import Reviews from '../components/e_provider/reviews.vue'
+import Maps from '../components/e_provider/maps.vue'
 import Contact from '../components/e_provider/contact.vue'
 import Availability from '../components/e_provider/availability.vue'
 import Awards from '../components/e_provider/awards.vue'
@@ -35,6 +38,7 @@ export default {
   name: 'EProvider',
   components: {
     Review,
+    Maps,
     Experiences,
     Awards,
     Availability,
