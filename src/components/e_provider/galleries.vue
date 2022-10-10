@@ -6,7 +6,7 @@
       <ul class='grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8' role='list'>
         <photo-provider>
             <photo-consumer v-for="image in eProviderGalleries" :intro="this.$filters.stripHtml(image.description)" :key="image.id" :src="image.media[0].url">
-              <img :src="image.media[0].url" class="w-full custom-img-height aspect-w aspect-h-8 rounded-lg object-cover">
+              <img :src="image.media[0].thumb" class="w-full custom-img-height aspect-w aspect-h-8 rounded-lg object-cover">
             </photo-consumer>
         </photo-provider>
       </ul>

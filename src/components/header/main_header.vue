@@ -45,14 +45,20 @@
             <Languages />
           </div>
           <MyNotifications v-if='this.isAuth' />
+          
+          <div v-if='this.getUser'>
+          </div>
+          <div v-else>
           <a :href="'Login'" 
-            class='text-sm focus:outline-none text-second-color-500 hover:text-second-color-900'>
+            class='text-sm focus:outline-none text-second-color-500 hover:text-second-color-900 mr-2'>
             {{ $t('Login') }}
-            </a>
-          <a :href="'Register'" 
+          </a>
+          <a :href="'Register'"
             class='hidden px-4 py-2 text-sm text-white rounded-md border border-transparent shadow-sm md:inline-flex bg-main-color-600 hover:bg-main-color-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-color-500'>
             {{ $t('Register') }}
           </a>
+          </div>
+          
           
           <div v-if='this.isAuth' class='hidden md:flex-shrink-0 md:flex md:items-center'>
             <Menu as='div' class='relative'>

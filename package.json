@@ -28,6 +28,7 @@
     "vue-slick-carousel": "^1.0.6",
     "vue3-carousel": "^0.1.31",
     "vue3-geolocation": "^1.0.0",
+    "vue3-google-map": "^0.15.0",
     "vue3-photo-preview": "^0.2.6",
     "vue3-picture-swipe": "^3.0.6",
     "vue3-star-ratings": "^1.1.0",
