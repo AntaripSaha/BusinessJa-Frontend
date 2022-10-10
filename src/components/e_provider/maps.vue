@@ -1,27 +1,20 @@
 <template>
 <section>
-    <GoogleMap api-key="AIzaSyAqyCV9gH5jiSpMJ_oon28uKDq_ZftLmKg" style="width: 100%; height: 450px" :center="center" :zoom="15" >
-        <Marker :options="{position: center}" />
+    <GoogleMap api-key="AIzaSyAqyCV9gH5jiSpMJ_oon28uKDq_ZftLmKg" style="width: 100%; height: 450px" :center="mapInitial()" :zoom="15" >
+        <Marker :options="{position: mapInitial()}" />
     </GoogleMap>
-    getLngLat{{center}}
  
    
 </section>
 </template>
 
 <script>
-import {
-    createNamespacedHelpers
-} from 'vuex'
 import axios from 'axios'
+import maps from '../../plugins/maps';
 import {
     GoogleMap,
     Marker
 } from "vue3-google-map";
-const {
-    mapState,
-    mapActions
-} = createNamespacedHelpers('eProvider')
 export default {
     name: 'Maps',
     components: {
@@ -46,19 +39,9 @@ export default {
     //     };
     // },
     mounted() {
-        this.getEProvider(this.$route.params.id);
-        this.mapcall()
-    },
-    computed: {
-        ...mapState(['eProvider']),
-        getLngLat() {
-            return this.center
-        }
+      this.mapcall();   
     },
     methods: {
-        ...mapActions(['getEProvider']),
-       
-        
         mapcall() {
             let response = ''
             let queryParameters = {
@@ -68,19 +51,19 @@ export default {
             response = axios.get(`https://admin.yellowpageja.com/api/e_providers/${id}`, {
                 params: queryParameters
             }).then(response => {
-               
                 console.log('Map response ', response)
                 var lat = response.data.data.addresses[0].latitude;
                 var lng = response.data.data.addresses[0].longitude;
-                this.center.lat = Number(lat)
-                this.center.lng = Number(lng)
-                console.log('this.center ', this.center)
-                vm.$forceUpdate();
-                //or in file components
-                this.$forceUpdate();
-                // return {lat, lng}
+                this.center.lat = Number(lat);
+                this.center.lng = Number(lng);             
             })
+        },
 
+        mapInitial() {
+          return {
+            lat: this.center.lat,
+            lng: this.center.lng
+          }
         },
     }
 }

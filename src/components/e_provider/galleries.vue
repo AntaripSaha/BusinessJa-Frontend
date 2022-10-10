@@ -23,7 +23,6 @@ export default {
   name: 'Galleries',
   components: {
     Loader,
-
   },
   mounted() {
     this.getEProviderGalleries(this.$route.params.id)

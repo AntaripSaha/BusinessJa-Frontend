@@ -35,11 +35,11 @@
               {{ $t('Remember me') }}
             </label>
 
-            <div class='flex-grow text-sm text-right'>
+            <!-- <div class='flex-grow text-sm text-right'>
               <a class='font-medium text-main-color-600 hover:text-main-color-500' href='#'>
                 {{ $t('Forgot your password?') }}
               </a>
-            </div>
+            </div> -->
           </div>
 
           <div>

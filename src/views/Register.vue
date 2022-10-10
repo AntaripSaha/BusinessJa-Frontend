@@ -49,7 +49,7 @@
                    required='required' type='checkbox' />
             <label class='block ml-2 text-sm text-second-color-600' for='conditions'>
               {{ $t('Agree') }}
-              <a class='font-medium text-main-color-600 hover:text-main-color-500' href='#'>
+              <a class='font-medium text-main-color-600 hover:text-main-color-500' :href="'pages/2'">
                 {{ $t('Terms & Conditions ?') }}
               </a>
             </label>
