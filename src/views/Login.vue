@@ -35,11 +35,11 @@
               {{ $t('Remember me') }}
             </label>
 
-            <!-- <div class='flex-grow text-sm text-right'>
-              <a class='font-medium text-main-color-600 hover:text-main-color-500' href='#'>
+            <div class='flex-grow text-sm text-right'>
+              <a class='font-medium text-main-color-600 hover:text-main-color-500' href='https://admin.yellowpageja.com/password/reset'>
                 {{ $t('Forgot your password?') }}
               </a>
-            </div> -->
+            </div>
           </div>
 
           <div>
@@ -77,7 +77,7 @@ export default {
       this.loginAction(event).then(result => {
         if (result.type === 'success') {
           console.log(this.$route.redirectedFrom)
-          this.$router.back()
+          // this.$router.back()
           this.$router.replace(this.$route.redirectedFrom || { name: 'Home' })
         }
         this.toggleSnackBarAction(result)
