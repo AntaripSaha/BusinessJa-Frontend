@@ -10,13 +10,13 @@
         <button v-if='eProvider?.phone_number !== undefined'
                 class='inline-flex items-center px-4 py-2 space-x-2 text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-color-500'
                 type='button'>
-          <PhoneIcon class='w-6 h-6' />
+          <img :src="'images/phone.png'" class='h-7 w-auto'>
           <span>{{ eProvider?.phone_number }}</span>
         </button>
         <button v-if='eProvider?.mobile_number !== undefined'
                 class='inline-flex items-center px-4 py-2 space-x-2 text-sm font-medium text-gray-700 bg-white rounded-md border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-color-500'
                 type='button'>
-          <DeviceMobileIcon class='w-6 h-6' />
+          <img :src="'images/whatsapp.png'" class='h-7 w-auto'>
           <span>{{ eProvider?.mobile_number }}</span>
         </button>
         <a :href="eProvider.facebook" target="_blank" class='inline-flex items-center px-4 py-2 space-x-2 text-sm font-medium text-gray-600 bg-white rounded-md border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-color-500'>
