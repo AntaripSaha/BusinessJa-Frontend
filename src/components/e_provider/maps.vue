@@ -29,15 +29,6 @@ export default {
             }
         }
     },
-    // setup() {
-    //     const center = {
-    //         lat: 18.0192352,
-    //         lng:-76.7935443
-    //     };
-    //     return {
-    //         center
-    //     };
-    // },
     mounted() {
       this.mapcall();   
     },
@@ -58,7 +49,6 @@ export default {
                 this.center.lng = Number(lng);             
             })
         },
-
         mapInitial() {
           return {
             lat: this.center.lat,
