@@ -51,7 +51,7 @@ export default {
                 'with': 'addresses',
             }
         let id = this.$route.params.id
-         response =  axios.get(`https://admin.yellowpageja.com/api/e_providers/${id}`, { params: queryParameters }).then(response => {
+         response =  axios.get(`https://admin.welistdubai.com/api/e_providers/${id}`, { params: queryParameters }).then(response => {
             console.log('Map response ', response )
           return response
         }) 

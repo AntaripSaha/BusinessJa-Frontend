@@ -7,6 +7,7 @@ export default {
         eProviderReviews: [],
         providersList: [],
         featuredProvidersList: [],
+        realestateProvidersList: [],
         eProviderGalleries: [],
         eProviderAwards: [],
         eProviderExperiences: [],
@@ -24,6 +25,9 @@ export default {
         },
         UPDATE_FEATURED_PROVIDER_LIST(state, providers){
             state.featuredProvidersList = providers
+        },
+        UPDATE_REALESTATE_PROVIDER_LIST(state, providers){
+            state.realestateProvidersList = providers
         },
 
         UPDATE_E_PROVIDER_GALLERIES(state, galleries) {
@@ -65,6 +69,18 @@ export default {
                 const providers = response.data.data
                 console.log(response.data.data)
                 commit('UPDATE_FEATURED_PROVIDER_LIST', providers)
+            })
+        },
+        getRealEstateProviderList({ commit }) {
+            commit('UPDATE_REALESTATE_PROVIDER_LIST', {})
+            let queryParameters = {
+                'only': 'eProvider;id;name;price;discount_price;price_unit;has_media;media;total_reviews;rate;description',
+                'limit': '8',
+            }
+            this.$axios.get(`realestate_providers_list`, { params: queryParameters }).then(response => {
+                const providers = response.data.data
+                console.log(response.data.data)
+                commit('UPDATE_REALESTATE_PROVIDER_LIST', providers)
             })
         },
         getEProvider({ commit }, id = '') {

@@ -46,7 +46,7 @@ export const createRouter = (app) => {
     })
     router.beforeEach(guard => {
         let getApp = () => {
-            return props.$settings['app_name'] == 0 ? 'BusinessJA' : props.$settings['app_name'];
+            return props.$settings['app_name'] == 0 ? 'WeListDubai' : props.$settings['app_name'];
         }
         let props = app.config.globalProperties
         window.document.title = props.i18n.global.t(getApp()) + ' | ' + props.i18n.global.t(guard.name) // && toRoute.meta.title ? toRoute.meta.title : 'Home';

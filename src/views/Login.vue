@@ -36,7 +36,7 @@
             </label>
 
             <div class='flex-grow text-sm text-right'>
-              <a class='font-medium text-main-color-600 hover:text-main-color-500' href='https://admin.yellowpageja.com/password/reset'>
+              <a class='font-medium text-main-color-600 hover:text-main-color-500' href='https://admin.welistdubai.com/password/reset'>
                 {{ $t('Forgot your password?') }}
               </a>
             </div>

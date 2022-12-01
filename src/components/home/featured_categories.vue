@@ -9,7 +9,7 @@
         </h2>
         <p class='text-sm sm:text-base text-second-color-400 sm:truncate'>
           <!-- {{ $t('Featured Categories Subtitle') }} -->
-          All Categories
+          Get The Places You Need
         </p>
       </div>
       <div class='flex mt-4 md:mt-0'>
